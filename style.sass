@@ -1,0 +1,455 @@
+$color-blue: #A6CBD6
+$color-dark-blue: #2A5160
+$color-white: #FFF
+$color-black: #333333 
+$color-grey: #c9c9c9
+$color-grey-text: #707070
+$color-yellow: #E8DB8B
+$color-pink: #F0A5CA
+$color-purple: #B493F8
+@mixin area_position($position:absolute, $top:0, $left:0)
+    position: $position
+    top: $top
+    left: $left
+@mixin size($width, $height)
+    width: $width
+    height: $height
+body
+    margin: 0
+    padding: 0
+    position: relative
+    color: $color-black
+nav
+    background-color: $color-white
+    +size(15%, 100%)
+    position: fixed
+    z-index: 10
+    ul
+        padding: 0
+        text-align: center
+    li
+        list-style: none
+        a
+            display: block
+            text-decoration: none
+            color: $color-grey-text
+            padding: 20px
+            font-size: 20px
+            &:hover
+                background-color: $color-blue
+                color: $color-white
+                text-shadow: 3px 3px 3px $color-grey-text
+    li:first-child
+        margin-top: 120px
+    .li_active
+        a
+            background-color: $color-blue
+            color: $color-white
+            text-shadow: 3px 3px 3px $color-grey-text
+    .contact
+        text-align: center
+        font-size: 20px
+        a
+            display: inline-block
+            text-decoration: none
+            color: $color-grey-text
+            margin: 0 10px
+            &:hover
+                color: $color-blue   
+.circle
+    margin: 0 auto
+    +size(150px, 150px)
+    background-color: $color-blue
+    border: 2px solid $color-blue
+    border-radius: 100%
+    overflow: hidden
+    img
+        width: 90%
+main
+    width: 85%
+    float: right
+.mark
+    background-color: rgba($color-grey, .2)
+    +size(100%, 100%)
+    position: fixed
+    z-index: -1
+.bg
+    position: fixed
+    z-index: -2
+    +size(100%, 100%)
+    img:first-child
+        +size(100%, 100%)
+        object-fit: cover
+    img:nth-child(2)
+        position: absolute
+        left: 50%
+        bottom: -5%
+        width: 1.5%
+        animation: fly2 35s 3s infinite
+    img:nth-child(3)
+        position: absolute
+        left: 10%
+        bottom: -5%
+        width: 1.5%
+        animation: fly3 30s 2s infinite
+    img:nth-child(4)
+        position: absolute
+        left: 0%
+        bottom: -5%
+        width: 1.2%
+        animation: fly4 28s infinite
+    img:nth-child(5)
+        position: absolute
+        left: 60%
+        bottom: -5%
+        width: 1.3%
+        animation: fly5 29s 5s infinite
+    img:nth-child(6)
+        position: absolute
+        left: 22%
+        bottom: -5%
+        width: 1%
+        animation: fly6 32s 3s infinite
+@keyframes fly2
+    0%
+        bottom: -5%
+        left: 50%
+        opacity: .8
+    100%
+        bottom: 100%
+        left: 80%
+        opacity: 0.5
+@keyframes fly3
+    0%
+        bottom: -5%
+        left: 10%
+        opacity: 0.8
+    100%
+        bottom: 100%
+        left: 40%
+        opacity: 0.2
+@keyframes fly4
+    0%
+        bottom: -5%
+        left: 0%
+        opacity: .9
+    100%
+        bottom: 100%
+        left: 20%
+        opacity: 0.5
+@keyframes fly5
+    0%
+        bottom: -5%
+        left: 60%
+        opacity: .8
+    100%
+        bottom: 100%
+        left: 100%
+        opacity: 0.5
+@keyframes fly6
+    0%
+        bottom: -5%
+        left: 22%
+        opacity: .7
+    100%
+        bottom: 100%
+        left: 60%
+        opacity: 0.5
+.top
+    padding: 6% 0 28% 0
+    color: $color-white
+    box-sizing: border-box
+    position: relative
+    p
+        +area_position(absolute, 50%, 50%)
+        transform: translate(-50%, -50%)
+        font-size: 3vw
+        text-shadow: 3px 3px 3px $color-grey-text
+    img
+        +area_position(absolute, 50%, 50%)
+        transform: translateX(-50%)
+        display: block
+        margin-top: 40%
+        width: 3vw
+        animation: ani 1.5s infinite
+section
+    h2
+        font-size: 2.5vw
+        text-align: center
+        color: $color-white
+        text-shadow: 3px 3px 3px $color-grey-text
+        margin-bottom: 5vw
+.container
+    padding: 8vw 0 15vw 0
+    width: 80%
+    margin: 0 auto
+
+//skills
+.skill_items
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    text-align: center
+    .item
+        background-color: $color-white
+        width: 30%
+        border-radius: 5px
+        box-shadow: 2px 2px 5px rgba($color-black, .3)
+        padding: 2vw 0
+        i
+            font-size: 4.5vw
+    .item:first-child
+        border-bottom: 10px solid $color-yellow
+        i
+            color: $color-yellow
+    .item:nth-child(2)
+        border-bottom: 10px solid $color-pink
+        i
+            color: $color-pink
+    .item:last-child
+        border-bottom: 10px solid $color-purple
+        i
+            color: $color-purple
+    ul
+        text-align: left
+        width: 9vw
+        margin: 0 auto
+        padding: 0
+        li
+            line-height: 1.5
+#works, footer
+    background-color: $color-blue
+//works
+.work_item
+    display: flex
+    margin-bottom: 5vw
+    .item_img, .item_content
+        width: 50%
+    .item_img 
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+    .item_content
+        background-color: $color-white
+        line-height: 1.5
+        padding: 20px 0
+        h3
+            text-align: center
+        ul
+            width: 55%
+            margin: 0 auto
+            padding: 0
+        .web_link
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-top: 3vw
+            a
+                font-size: 14px
+                text-decoration: none
+                padding: 2px 5px
+                border: 2px solid $color-dark-blue
+                color: $color-dark-blue
+                border-radius: 5px 
+                &:hover
+                    background-color: $color-dark-blue
+                    color: $color-white
+            a:first-child
+                margin-right: 30px
+.work_item:nth-child(odd)
+    flex-direction: row-reverse
+.work_item:last-child
+    margin-bottom: 0
+//about
+#about
+    color: $color-white
+    text-shadow: 2px 2px 3px $color-grey-text
+    .text
+        width: 50%
+        margin: 0 auto
+        line-height: 1.5
+        text-align: center
+        font-weight: bold
+        font-size: 18px
+//footer
+footer
+    padding: 3.5vw 0
+    text-align: center
+    color: $color-white
+    text-shadow: 2px 2px 3px $color-grey-text
+    a
+        display: inline-block
+        text-decoration: none
+        color: $color-white
+        font-size: 24px
+        margin: 20px
+        &:hover
+            color: $color-dark-blue
+.visible
+    opacity: 0
+.fade-in 
+    animation: fade-in 1s running
+@keyframes ani
+    0%
+        top: 0px
+    50%
+        top: 10px
+    100%
+        top: 0px
+@keyframes fade-in
+    0%
+        opacity: 0
+        transform: translateY(30%)
+    100%
+        opacity: 1
+        transform: none
+@media screen and(max-width: 1200px)
+    nav
+        width: 20%
+    main
+        width: 80%
+    .container
+        width: 90%
+    section
+        h2
+            font-size: 3vw
+    .top 
+        padding: 30% 0
+        img
+            margin-top: 55%
+    //skills
+    .skill_items
+        ul
+            width: 12vw
+    .work_item .item_content ul
+        width: 65%
+    //about
+    #about .text
+        width: 70%
+@media screen and(max-width: 1100px)
+    nav
+        width: 22%
+    main
+        width: 78%
+    //works
+    .work_item .item_content ul
+        width: 80%
+@media screen and(max-width: 900px)
+    //works
+    .work_item
+        flex-direction: column
+        .item_img, .item_content
+            width: 80%
+            margin: 0 auto
+        .item_content 
+            margin-top: -10px
+            ul
+                width: 50%
+            .web_link
+                margin: 5vw 0 3vw 0
+    .work_item:nth-child(odd)
+        flex-direction: column
+   
+@media screen and(max-width: 768px)
+    .mark
+        +area_position(fixed)
+        z-index: 5
+        display: none
+        background-color: rgba( $color-black, 0.5)
+    .mark.mark_show
+        display: block
+    nav
+        width: 230px
+        top: 0
+        left: 0
+        transform: translateX(-100%)
+        transition: transform 0.8s ease-in-out
+    nav.open
+        transform: translateX(0%)
+    .nav_btn
+        +area_position(fixed, 5vw, 5vw)
+        +size(30px, 30px)
+        background-color: $color-white
+        border-radius: 5px
+        padding: 5px
+        cursor: pointer
+        z-index: 10
+        .line
+            +area_position(absolute, 50%, 50%)
+            transform: translate(-50%, -50%)
+            width: 25px
+            height: 4px
+            background-color: $color-dark-blue
+            border-radius: 5px
+        .line:before, .line:after
+            content: ""
+            display: block
+            +area_position(absolute, -200%)
+            width: 25px
+            height: 4px
+            background-color: $color-dark-blue
+            border-radius: 5px
+        .line:after
+            +area_position(absolute, 200%)
+        &:hover
+            background-color: $color-dark-blue
+            .line, .line:before, .line:after
+                background-color: $color-white
+    .nav_btn_click
+        background-color: $color-dark-blue
+        .line, .line:before, .line:after
+            background-color: $color-white
+    main
+        width: 100%
+    section h2, .top p
+        font-size: 4.2vw
+    .top img
+        width: 4.2vw
+        margin-top: 55%
+    //skills
+    .skill_items
+        ul
+            width: 16vw
+        .item
+            padding: 3.5vw 0
+            i
+                font-size: 5vw
+    //works
+    .work_item .item_content .web_link
+        margin: 5vw 0
+    //about
+    #about .text
+        font-size: 16px
+@media screen and(max-width: 690px)
+    .skill_items 
+        .item
+            width: 45%
+            margin-bottom: 5vw
+            padding: 4vw 0
+            i
+                font-size: 6vw
+        ul
+            width: 20vw
+@media screen and(max-width: 500px)
+    section h2
+        font-size: 5.8vw
+    .top p
+        font-size: 4.1vw
+    .top img
+        width: 6vw
+        margin-top: 55%
+    .skill_items 
+        justify-content: center
+        .item
+            width: 70%
+            margin-bottom: 8vw
+            i
+                font-size: 8vw
+        ul
+            width: 20vw
+    //works
+    .work_item .item_content ul
+        width: 60%
+    .work_item .item_content .web_link
+        margin: 7vw 0
