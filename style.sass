@@ -19,6 +19,38 @@ body
     padding: 0
     position: relative
     color: $color-black
+// loading
+body.loading 
+    overflow: hidden
+body.loading #loading_bar
+    display: block
+    transition: all 10s ease-out 
+#loading_bar
+    display: none
+    +size(100%, 100%)
+    position: fixed
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%)
+    z-index: 15
+    h2
+        font-family: Recursive Sans Casual
+        color: $color-dark-blue
+        +area_position(absolute, 70%, 50%)
+        transform: translateX(-50%)
+    .circle
+        +area_position(absolute, 50%, 50%)
+        transform: translate(-50%, -50%)
+        +size(250px, 250px)
+        border-radius: 100%
+        background-color: $color-blue
+        overflow: hidden
+        img
+            width: 90%
+            +area_position(absolute, 0, 50%)
+            transform: translate(-50%, 75%)
+            transition: transform 1.5s ease
+        img.cat_ani
+            transform: translate(-50%, 0%)
+        
 nav
     background-color: $color-white
     +size(15%, 100%)
@@ -56,15 +88,15 @@ nav
             margin: 0 10px
             &:hover
                 color: $color-blue   
-.circle
-    margin: 0 auto
-    +size(150px, 150px)
-    background-color: $color-blue
-    border: 2px solid $color-blue
-    border-radius: 100%
-    overflow: hidden
-    img
-        width: 90%
+    .circle
+        margin: 0 auto
+        +size(150px, 150px)
+        background-color: $color-blue
+        border: 2px solid $color-blue
+        border-radius: 100%
+        overflow: hidden
+        img
+            width: 90%
 main
     width: 85%
     float: right

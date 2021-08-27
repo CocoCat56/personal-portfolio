@@ -1,3 +1,11 @@
+var body = document.querySelector("body");
+let loading_bar = document.querySelector("#loading_bar");
+window.onload = () => {
+    loading_bar.children[0].children[0].classList.add("cat_ani");
+    setTimeout(()=>{
+        body.classList.remove("loading");
+    }, 3000);
+}
 // nav -- max-width:768px
 let nav = document.querySelector("nav");
 let nav_btn = document.querySelector(".nav_btn");
