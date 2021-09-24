@@ -10,8 +10,8 @@ var data = [
     {
         workName: '台灣節慶活動',
         image: './images/festival.jpg',
-        desc: [' Vue.js 串接 API', '網站以臺灣節慶活動為主題', '使用 Bootstrap 製作響應式網頁'],
-        skill: 'Vue.js | Vue-cli | RWD | Scss | Axios',
+        desc: ['使用 Vue CLI 建立 Vue.js 專案並串接 API', '網站以臺灣節慶活動為主題', '使用 Bootstrap 製作響應式網頁'],
+        skill: 'Vue.js | Vue-cli | vue-axios | RWD',
         github: 'https://github.com/CocoCat56/Taiwan-Festivals',
         web: 'https://coco-works-taiwan-festivals.netlify.app/#/'
     },
