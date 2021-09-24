@@ -355,7 +355,7 @@ footer
     //skills
     .skill_items
         ul
-            width: 12vw
+            width: 14vw
     .work_item .item_content ul
         width: 65%
     //about
@@ -385,6 +385,12 @@ footer
     .work_item:nth-child(odd)
         flex-direction: column
    
+    // skills
+    .skill_items 
+        .item
+            width: 45%
+            margin-bottom: 5vw
+            padding: 4vw 0
 @media screen and(max-width: 768px)
     .mark
         +area_position(fixed)
@@ -458,21 +464,11 @@ footer
 @media screen and(max-width: 690px)
     .skill_items 
         .item
-            width: 45%
-            margin-bottom: 5vw
-            padding: 4vw 0
             i
                 font-size: 6vw
         ul
             width: 20vw
-@media screen and(max-width: 500px)
-    section h2
-        font-size: 5.8vw
-    .top p
-        font-size: 4.1vw
-    .top img
-        width: 6vw
-        margin-top: 55%
+@media screen and(max-width: 560px)
     .skill_items 
         justify-content: center
         .item
@@ -481,7 +477,15 @@ footer
             i
                 font-size: 8vw
         ul
-            width: 20vw
+            width: 25vw
+@media screen and(max-width: 500px)
+    section h2
+        font-size: 5.8vw
+    .top p
+        font-size: 4.1vw
+    .top img
+        width: 6vw
+        margin-top: 55%
     //works
     .work_item .item_content ul
         width: 60%

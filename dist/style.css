@@ -462,7 +462,7 @@ footer a:hover {
   }
 
   .skill_items ul {
-    width: 12vw;
+    width: 14vw;
   }
 
   .work_item .item_content ul {
@@ -506,6 +506,12 @@ footer a:hover {
 
   .work_item:nth-child(odd) {
     flex-direction: column;
+  }
+
+  .skill_items .item {
+    width: 45%;
+    margin-bottom: 5vw;
+    padding: 4vw 0;
   }
 }
 @media screen and (max-width: 768px) {
@@ -618,16 +624,26 @@ footer a:hover {
   }
 }
 @media screen and (max-width: 690px) {
-  .skill_items .item {
-    width: 45%;
-    margin-bottom: 5vw;
-    padding: 4vw 0;
-  }
   .skill_items .item i {
     font-size: 6vw;
   }
   .skill_items ul {
     width: 20vw;
+  }
+}
+@media screen and (max-width: 560px) {
+  .skill_items {
+    justify-content: center;
+  }
+  .skill_items .item {
+    width: 70%;
+    margin-bottom: 8vw;
+  }
+  .skill_items .item i {
+    font-size: 8vw;
+  }
+  .skill_items ul {
+    width: 25vw;
   }
 }
 @media screen and (max-width: 500px) {
@@ -642,20 +658,6 @@ footer a:hover {
   .top img {
     width: 6vw;
     margin-top: 55%;
-  }
-
-  .skill_items {
-    justify-content: center;
-  }
-  .skill_items .item {
-    width: 70%;
-    margin-bottom: 8vw;
-  }
-  .skill_items .item i {
-    font-size: 8vw;
-  }
-  .skill_items ul {
-    width: 20vw;
   }
 
   .work_item .item_content ul {
