@@ -7,7 +7,7 @@ html(lang="en")
         title 劉盈秀作品集
         link(rel="shortcut icon" href="./images/icon.ico")
         link(rel="stylesheet" href="./style.css")
-        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")  
     body(class="loading")
         #loading_bar
             .circle 
@@ -56,12 +56,14 @@ html(lang="en")
                             i(class="fas fa-laptop-code")
                             h3 Web Develop
                             ul 
-                                li HTML (pug)
-                                li CSS (SASS)
-                                li Bootstrap
+                                li HTML、pug
+                                li CSS、SASS
                                 li JavaScript
-                                li jQuery
+                                li 串接API(AJAX / Axios)
+                                li jQuery、Bootstrap
                                 li Vue.js
+                                li PHP
+                                li MySQLi
                         .item(class="visible") 
                             i(class="fas fa-palette")
                             h3 Graphic Design
@@ -80,67 +82,22 @@ html(lang="en")
             section#works 
                 .container 
                     h2 Works
-                    .work_item(class="visible")
+                    .work_item(class="visible" v-for="(work, key) in worksData" :key="key")
                         .item_img 
-                            img(src="./images/work1.jpg", alt="work1")
+                            img(:src="work.image", :alt="work.workName")
                         .item_content
-                            h3 個人作品集
+                            h3 {{ work.workName }}
                             ul 
-                                li HTML(pug), CSS(SASS), JavaScript
-                                li 作品集與相關資訊
-                                li 手刻 CSS 製作響應式網頁
-                                li JavaScript + CSS 呈現 scroll animate
+                                li(v-for="(item, key) in work.desc" :key="key") {{ item }} 
+                                li.skill {{ work.skill }}
                             .web_link 
-                                a(href="https://github.com/CocoCat56/personal-portfolio" target="_blank") GitHub 
-                                a(href="https://coco-personal-portfolio.netlify.app/" target="_blank") 前往網站
-                    .work_item(class="visible")
-                        .item_img 
-                            img(src="./images/work2.jpg", alt="work2")
-                        .item_content
-                            h3 雲華
-                            ul 
-                                li HTML(pug), CSS(SASS), JavaScript, Vue3.0
-                                li 以虛擬的茶葉店為主題的網站
-                                li 手刻 CSS 和 JavaScript 製作響應式網頁
-                                li Vue3.0 呈現茶知識、商品資訊和說明
-                                li 點擊商品名或購買可查看商品說明
-
-                            .web_link 
-                                a(href="https://github.com/CocoCat56/teashop" target="_blank") GitHub 
-                                a(href="https://coco-works-teashop.netlify.app/" target="_blank") 前往網站
-                    .work_item(class="visible")
-                        .item_img 
-                            img(src="./images/work3.jpg", alt="work3")
-                        .item_content
-                            h3 MeowIn café
-                            ul 
-                                li HTML, CSS(SASS), Bootstrap, jQuery
-                                li 單頁網站
-                                li 以虛擬的貓咪咖啡廳為主題
-                                li 使用 Bootstrap 製作響應式網頁
-                                li jQuery + CSS 呈現 scroll animate
-                            .web_link 
-                                a(href="https://github.com/CocoCat56/MeowIn" target="_blank") GitHub 
-                                a(href="https://coco-works-meowin.netlify.app/" target="_blank") 前往網站
-                    .work_item(class="visible")
-                        .item_img 
-                            img(src="./images/work4.jpg", alt="work4")
-                        .item_content
-                            h3 Plant Diary
-                            ul 
-                                li HTML(pug), CSS(SASS), JavaScript
-                                li 使用 Plant Diary 建立自己的植物日記
-                                li JavaScript 練習
-                                li 新增和即時顯示內容、刪除功能
-                                li 手刻 CSS 製作響應式網頁
-                            .web_link 
-                                a(href="https://github.com/CocoCat56/PlantDiary" target="_blank") GitHub 
-                                a(href="https://coco-works-plantdiary.netlify.app" target="_blank") 前往網站
+                                a(:href="work.github" target="_blank") GitHub 
+                                a(:href="work.web" target="_blank") 前往網站
             section#about 
                 .container 
                     h2 About
                     .text
-                        p 我是劉盈秀，目前努力研究前端技術，上網路課程學習新知識，致力成為一名網頁設計師。
+                        p 我是盈秀，擁有網頁開發、影像處理和 UI 介面設計能力，持續學習前端技術並提升程式邏輯與解決問題的能力，享受將 UI 設計稿一步一步實作成網頁的過程。
             footer
                 h2 劉盈秀作品集 
                 a(href="https://github.com/CocoCat56" target="_blank")
@@ -148,4 +105,6 @@ html(lang="en")
                 a(href="mailto:zo7758002@gmail.com")
                     i(class="fas fa-envelope")
                 p Copyright © 2021 劉盈秀 All Rights Reserved. 
-        script(src="./js/script.js") 
+        script(src="./js/vue.global.prod.js")
+        script(src="./js/data.js")
+        script(src="./js/script.js")

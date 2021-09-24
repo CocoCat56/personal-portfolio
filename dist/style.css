@@ -119,7 +119,7 @@ main {
 }
 
 .mark {
-  background-color: rgba(201, 201, 201, 0.2);
+  background-color: rgba(201, 201, 201, 0.1);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -366,6 +366,9 @@ section h2 {
 .work_item .item_content .web_link a:first-child {
   margin-right: 30px;
 }
+.work_item .item_content .skill {
+  color: #707070;
+}
 
 .work_item:nth-child(odd) {
   flex-direction: row-reverse;
@@ -377,10 +380,10 @@ section h2 {
 
 #about {
   color: #FFF;
-  text-shadow: 2px 2px 3px #707070;
+  text-shadow: 1px 1px 2px #707070;
 }
 #about .text {
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
   line-height: 1.5;
   text-align: center;
@@ -483,7 +486,7 @@ footer a:hover {
     width: 80%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .work_item {
     flex-direction: column;
   }

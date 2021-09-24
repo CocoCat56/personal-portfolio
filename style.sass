@@ -101,7 +101,7 @@ main
     width: 85%
     float: right
 .mark
-    background-color: rgba($color-grey, .2)
+    background-color: rgba($color-grey, .1)
     +size(100%, 100%)
     position: fixed
     z-index: -1
@@ -289,6 +289,8 @@ section
                     color: $color-white
             a:first-child
                 margin-right: 30px
+        .skill
+            color: $color-grey-text
 .work_item:nth-child(odd)
     flex-direction: row-reverse
 .work_item:last-child
@@ -296,9 +298,9 @@ section
 //about
 #about
     color: $color-white
-    text-shadow: 2px 2px 3px $color-grey-text
+    text-shadow: 1px 1px 2px $color-grey-text
     .text
-        width: 50%
+        width: 65%
         margin: 0 auto
         line-height: 1.5
         text-align: center
@@ -367,7 +369,7 @@ footer
     //works
     .work_item .item_content ul
         width: 80%
-@media screen and(max-width: 900px)
+@media screen and(max-width: 1000px)
     //works
     .work_item
         flex-direction: column
