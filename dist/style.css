@@ -12,6 +12,7 @@ body.loading {
 body.loading #loading_bar {
   display: block;
   transition: all 10s ease-out;
+  text-align: center;
 }
 
 #loading_bar {
@@ -22,7 +23,7 @@ body.loading #loading_bar {
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   z-index: 15;
 }
-#loading_bar h2 {
+#loading_bar .loading_text {
   font-family: Recursive Sans Casual;
   color: #2A5160;
   position: absolute;
